@@ -1,0 +1,28 @@
+name: linux
+on:
+  push:
+    branches:
+      - '*'
+    tags-ignore:
+      - '*'
+  pull_request:
+jobs:
+  perl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: cuda-toolkit
+        uses: Jimver/cuda-toolkit@v0.2.4
+        with:
+          cuda: '11.2.2'
+      - run: |
+          echo "Installed cuda version is: ${{steps.cuda-toolkit.outputs.cuda}}"
+          echo "Cuda install location: ${{steps.cuda-toolkit.outputs.CUDA_PATH}}"
+      - run: nvcc -V
+      - run: perl -V
+      - name: uses install-with-cpanm
+        uses: perl-actions/install-with-cpanm@v1
+        with:
+          args: "--installdeps -n ."
+          sudo: false
