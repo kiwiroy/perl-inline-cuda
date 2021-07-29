@@ -627,6 +627,7 @@ END
     }
     #NVLINK: better use NVCC for linking and be done with this crap
     #$o->{ILSM}{MAKEFILE}{LD} = $o->{ILSM}{MAKEFILE}{NVLINK} . ' --compiler-bindir "'. $o->{ILSM}{MAKEFILE}{LD}.'"';
+	#aaa
     $o->{ILSM}{MAKEFILE}{LD} = $o->{ILSM}{MAKEFILE}{NVCC}
         . ' --compiler-bindir '
         . '"' . $host_linker_cmd . '"'
