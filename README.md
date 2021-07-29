@@ -648,10 +648,10 @@ This is free software, licensed under:
 
 Hey! **The above document had some coding errors, which are explained below:**
 
-- Around line 1181:
+- Around line 1180:
 
     You forgot a '=back' before '=head1'
 
-- Around line 1193:
+- Around line 1192:
 
     Non-ASCII character seen before =encoding in 'döt'. Assuming UTF-8
